@@ -8,8 +8,9 @@
 body{
     font-family: 'Courier New', Courier, monospace;
 }
+/*Navbar container*/
 nav{
-    background: #0ca637;
+    background-image: linear-gradient(red,green);
     height: 80px;
     width: 100%;
 }
@@ -42,17 +43,6 @@ a.active,a:hover{
     background: #0a5922;
     transition: .5s;
 }
-.checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-}
-#check{
-    display: none;
-}
 @media (max-width: 952px){
     label.logo{
         font-size: 30px;
@@ -63,43 +53,211 @@ a.active,a:hover{
     }
 }
 @media (max-width: 951px){
-    .checkbtn{
-        display: block;
-    }
     ul{
-        position: fixed;
+        position: inherit;
         width: 100%;
-        height: 100vh;
-        background: greenyellow;
-        top: 80px;
-        left: -100%;
+        height: 80px;
+        background-image: linear-gradient(green,red);
+        top: 0px;
         text-align: center;
         transition: all .5s;
     }
     nav ul li{
-        display: block;
+        display:contents;
+        position: relative;
         margin: 50px 0;
         line-height: 30px;
     }
     nav ul li a{
         font-size: 30px;
         font-style: bold;
-        padding: 7px 13px;
+        padding: 10px 20px;
         border-radius: 3px;
         text-transform: uppercase;
         text-align: center;
     }
-    a:hover,a.active{
-        background: none;
-        color: #0082e6;
-    }
-    #check:checked ~ ul{
-        left: 0%;
+    a.active,a:hover{
+        background: #0a5922;
+        transition: .5s;
+        cursor: pointer;
     }
 }
 .background-image{
-    background: #0ca637;
+    background-image: linear-gradient(red,green);
     background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+    background-repeat: repeat;
+    height: 100%;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    height: 600px;
+    position:relative;
+    margin: 0;
+    align-content: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+}
+
+/* Hide the images by default */
+.mySlides {
+  display:inline-block;
+}
+.slideimage{
+    width: 100%;
+    height: 600px;
+    position: relative;
+    size: fixed;
+}
+@media (max-width: 951px){
+    .slideshow-container{
+        height: auto;
+    }
+    .slideimage{
+        height: auto;
+    }
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select:auto;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #000000;
+  font-size: 50px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-weight: bolder;
+  text-emphasis-color: #f7ff0e;
+  text-shadow: 2px 2px 5px #f7ff0e;
+}
+
+.txtanimate{
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/*Cards*/
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+    background-image: linear-gradient(green,yellow);
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+    border-radius: 15px;
+    animation: wipe-enter 2s 1;
+}
+@keyframes wipe-enter {
+	0% {
+		transform: scale(0, .025);
+	}
+	50% {
+		transform: scale(1, .025);
+	}
+}
+.card-image{
+    background-color: chartreuse;
+    height: 250px;
+    margin-bottom: 15px;
+    background-size: cover;
+}
+.card-1{
+    background-image: url(./team1.jpg);
+}
+.card-2{
+    background-image: url(./stad3.jpg);
+}
+.card-3{
+    background-image: url(./DasmimaClub.jpg);
+}
+.card-title{
+    font-weight: bolder;
+    text-shadow: 2px 2px 5px red;
+    font-size: 30px;
+    text-align: center;
+}
+.card p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.card a{
+    display: block;
+    background-color: chartreuse;
+    color: #000000;
+    padding: 20px 20px;
+    text-align: center;
+    margin: 50px 50px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: x-large;
+}
+.card:hover{
+    background-color: #0a5922;
+    cursor: pointer;
+    transform: scale(1.2);
+    transition: all 1s ease;
+}
+.card a:hover{
+    background-color: #0a5922;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all 1s ease;
 }
