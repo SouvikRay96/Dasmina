@@ -287,3 +287,10 @@ a.active,a:hover{
     height: 50px;
     /*border: 1px solid white;*/
   }
+
+.paragraphs{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+    font-weight: bolder;
+}
